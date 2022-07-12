@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Thumma Sunitha">
+    <meta name="description" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>PROJECT</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/e6/80/8d/e6808d2fe10a05f669c17563c1bcb69a.jpg">
+    <style>
+        body{
+            background-image: linear-gradient(crimson,purple,grey);
+            /* background-image: linear-gradient(crimson,purple); */
+            background-size: cover;
+        }
+        #verticalNav a{
+            text-decoration: none;
+            color:black;
+        }
+        #table1{
+            background-color: deeppink;
+            position: static;
+            top:0px;
+        }
+        td{
+            text-align: center;
+            /* border: 2px solid red; */
+        }
+        footer{
+            background-color: black;
+            color: white;
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+        }
+        nav{
+            height: 50px;
+            width: 100%;
+            background-color: black;
+            text-align: center;
+        }
+        #navdiv a{
+            color: white;
+            text-decoration: none;
+            padding: 13px 140px;
+        }
+        #navdiv a:hover{
+            background-color: white;
+            color:black;
+            font-style: oblique;
+            font-size: large
+        }
+        #navdiv td:hover{
+            background-color: white;
+        }
+        #table3 td{
+            width:25%;
+        }
+        #navdiv td ul{
+            position:absolute;
+            right: 330px;
+            display:none;
+            width:25.5%;
+            text-align: center;
+        }
+        #navdiv td:hover ul{
+            display:block;
+        }
+        #navdiv td:hover li ul{
+            display: none;
+        }
+        #navdiv td ul li{
+            display:block;
+            float:none;
+            height:auto;
+            line-height: 35px;
+            background-color: rgb(27, 180, 207);
+        }
+        #navdiv td ul li:hover ul{
+            display:inline;
+            right: 345px;
+        }
+        #navdiv li:hover{
+            background-color: rgb(3, 99, 128);
+        }
+        #navdiv td ul li ul{
+            position:absolute;
+            display:none;
+            width:inherit;
+            text-align: center;
+        }
+        #navdiv td li li{
+            display: block;
+            float:none;
+            height:auto;
+            line-height: 35px;
+            background-color:  rgb(27, 180, 207);
+        }
+        #verticalNav{
+            display: none;
+            position:absolute;
+            top: 75px;
+            right:155px;
+        } 
+        #verticaNav ul{
+            display:none;
+            position: absolute;
+            width:inherit;
+            text-align: center;
+            z-index: -1;
+        }
+        #verticalNav li{
+            display: block;
+            float:none;
+            height: auto;
+            line-height: 35px;
+            background-color: rgb(27, 180, 207) ;
+        }
+        #verticalNav li:hover{ 
+            background-color: rgb(3, 99, 128);
+        }
+        #verticalNav ul ul{
+            display:none;
+        }
+        #verticalNav ul li:hover ul{
+            display:inline;
+            position:absolute;
+            right:84px;
+        }
+        #verticalNav ul li:hover ul ul{
+            display:none;
+        }
+        #verticalNav ul ul li:hover ul{
+            display:inline;
+            position:absolute;
+            right:47px;
+        }
+        #filter,#notifications{
+            width:25%;
+            background-image: linear-gradient(blue,red,grey);
+            float: left;
+            height:800px;
+        }
+        #main{
+            width:50%;
+            float:left;
+        }
+        iframe{
+            width:100%;
+            height: 800px;
+        }
+        #upArrow{
+            position: fixed;
+            right: 10px;
+        }
+        input{
+            background-color: rgb(41, 41, 95);
+            margin-top: 10px;
+            color: white;
+        }
+        button{
+            background-color: green;
+        }
+        button:hover{
+            background-color: red;
+        }
+        #list li{
+            margin-bottom: 10px;
+            color: white;
+        }
+        #notifications h3{
+            color:darkred;
+            text-align: center;
+        }
+        h1{
+            color: black;
+            text-shadow: 3px 3px 2px grey;
+        }
+        #myname{
+            background-color:rgb(12, 15, 167);
+            position: fixed;
+            top:10px;
+            left: 170px;
+            height:80px;
+            width: 100px;
+            display: none;
+        }
+        @media only screen and (max-width:600px)
+        {}
+
+    </style>
+</head>
+<body id="body">
+    <header>
+        <table id="table1" height="75px" width="100%">
+            <tr>
+                <td width="30%"><img src="https://i.pinimg.com/564x/e6/80/8d/e6808d2fe10a05f669c17563c1bcb69a.jpg" height="75px" width="75px" onmouseover="displayName()" onmouseout="hideName()" ></td>
+                <td><h1>Sunitha</h1></td> 
+                <td width="30%"><a href="#" onclick="displayVNav()"><img src="https://i.pinimg.com/736x/f4/fa/7f/f4fa7f64d5265dc00825865f99b0d423.jpg" height="35px" width="35px"></a></td>
+            </tr>
+        </table>
+    </header>
+    <div id="myname">
+        <h2>Sunitha</h2>
+    </div>
+    <footer>
+        <div id="footerdiv">
+            <table id="table2" width="100%">
+                <tr>
+                    <td width="30%"><small>@Sunitha Thumma</small></td>
+                    <td>****************************</td>
+                    <td width="30%">view count:
+                        <a href="https://www.hitwebcounter.com" target="_blank">
+                        <img src="https://hitwebcounter.com/counter/counter.php?page=8012443&style=0001&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a><a href="#table1" target="" ><img src="https://i.pinimg.com/280x280_RS/ec/cb/68/eccb68621d87b0545769391f7ea7dcf5.jpg" width="30px" height="30px" id="upArrow"></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </footer>
+    <nav id="nav">
+        <div id="navdiv">
+            <table id="table3" width="100%" height="50px" style="text-align: center;">
+                <tr>
+                    <td><a href="PROJECT1.html" target="">HOME</a></td>
+                    <td><a href="formValidations.html" target="frame">EXAM</a></td>
+                    <td><a href="#branch">BRANCH</a>
+                    <ul type="none">
+                        <li id="cse">CSE
+                            <ul type="none">
+                                <li class="faculty"><a href="#faculty" onclick="alertfunction()">FACULTY</a></li>
+                                <li class="student"><a href="#student" onclick="alertfunction1()">STUDENT</a></li>
+                            </ul>
+                        </li>
+                        <li>ECE</li>
+                        <li>MECH</li>
+                    </ul>
+                    </td>
+                    <td><a href="contacts.html" target="frame">CONTACTS</a></td>
+                </tr>
+            </table>         
+        </div>
+    </nav>
+    <div id="verticalNav">
+        <ul>
+            <li><a href="PROJECT1.html" target="">HOME</a></li>
+            <li><a href="formValidations.html" target="frame">EXAM</a></li>
+            <li><a href="#branch">BRANCH</a>
+                <ul type="none">
+                    <li><a href="#cse">CSE</a>
+                        <ul type="none">
+                            <li class="faculty"><a href="#faculty" onclick="alertfunction()">FACULTY</a></li>
+                            <li class="student"><a href="#student" onclick="alertfunction1()">STUDENT</a></li>
+                        </ul>
+                    </li>
+                    <li>ECE</li>
+                    <li>MECH</li>
+                </ul>
+            </li>
+            <li><a href="contacts.html" target="frame">CONTACTS</a></li>
+        </ul>
+    </div>
+    <div id="home">
+        <div id="filter" align="center">
+            <div>
+                <form id="form">
+                    <label style="color: white;">Search:</label><input type="text" name="" id="search">
+                    <!-- <input type="submit" value="ADD"> -->
+                </form>
+            </div>
+            <ul type="none" id="list" align="left">
+                <li>VIjayawada</li>
+                <li>Hyderabad</li>
+                <li>Banglore</li>
+                <li>Mumbai</li>
+                <li>Kolkata</li>
+                <li>Indore</li>
+                <li>Pune</li>
+                <li>Luknow</li>
+                <li>Vizag</li>
+                <li>Chennai</li>
+                <li>Delhi</li>
+            </ul>
+        </div>
+        <div id="main"><iframe name="frame" src="slideshow.html">
+            
+        </iframe></div>
+        <div id="notifications">
+            <h2 align="center" style="background-color: rgb(0, 183, 255);"><marquee>NOTIFICATIONS</marquee></h2>
+            <h3>Notification 1</h3>
+            <h3>Notification 2</h3>
+            <h3>Notification 3</h3>
+            <h3>Notification 4</h3>
+            <h3>Notification 5</h3>
+            <h3>Notification 6</h3>
+            <h3>Notification 7</h3>
+            <h3>Notification 8</h3>
+            <h3>Notification 9</h3>
+        </div>
+    </div>
+    <script>
+        function displayVNav(){
+            if(document.getElementById("verticalNav").style.display=="none")
+            {
+                document.getElementById("verticalNav").style.display="block";
+                document.getElementById("nav").style.display="none";
+            }
+            else{
+                document.getElementById("verticalNav").style.display="none";
+                document.getElementById("nav").style.display="block";
+            }
+        }
+        var filter=document.getElementById("search");
+        filter.addEventListener('keyup',searchItem,false);
+        function searchItem(e)
+        {
+            var text=e.target.value.toLowerCase();
+            var items=document.getElementsByTagName("li");
+            Array.from(items).forEach((item)=>
+            {
+                itemValue=item.firstChild.textContent;
+                if(itemValue.toLowerCase().indexOf(text)!=-1){
+                    item.style.display="block"; 
+                }
+                else{
+                    item.style.display="none";
+                }
+            } )
+        }
+        function displayName()
+        {
+            document.getElementById("myname").style.display="block";
+        }
+        function hideName()
+        {
+            document.getElementById("myname").style.display="none";
+        }
+        function alertfunction() {
+            var all=document.getElementsByClassName("faculty");
+            prompt("Are you Faculty then Enter your Id")
+        }
+        function alertfunction1() {
+            var all1=document.getElementsByClassName("student");
+            prompt("Are you Student then Enter your Id")
+        }
+        
+    </script>
+</body>
+</html>

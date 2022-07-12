@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>RGUKT HOME</title>
+	<style type="text/css">
+		div{
+			background-color: yellow;
+			width: 500px;
+
+		}
+		ul li{
+			width: 150px;
+			background-color: grey;
+			list-style: none;
+			margin-bottom: 3px;
+		}
+		button{
+			margin-left: 50px;
+		}
+		.delete{
+			background-color: blue;
+		}
+		button:hover{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+     
+   <center>  <div>
+     	<form id="myform">
+     		Hobbies:<input type="text" name="" id="first">
+     		<input type="submit" name="" value="ADD">
+     	</form>
+     </div>
+     
+ 
+     The Hobbies are:</center>
+    <center><ul id="lists">
+      	<li>Cricket<button class="delete">X</button></li>
+      </ul>
+    </center>
+    <script type="text/javascript">
+    	var myform=document.getElementById("myform");
+myform.addEventListener('submit',addItem,false);
+var lists=document.getElementById("lists");
+lists.addEventListener('click',removeItem,false);
+var filter=document.getElementById("filter");
+filter.addEventListener('keyup',searchItem,false);
+function addItem(e)
+{
+  e.preventDefault();
+  var f=document.getElementById("first").value;
+  //create li element with data
+  var l=document.createElement("li");
+  var text=document.createTextNode(f);
+  l.appendChild(text);
+
+  //create button with data
+  var dbtn=document.createElement("button");
+  dbtn.setAttribute("class","delete");
+  var dtext=document.createTextNode("X");
+  dbtn.appendChild(dtext);
+ 
+  // add button to the li
+  l.appendChild(dbtn);
+
+  // add li to the lists
+  lists.appendChild(l);
+  // console.log(lists);
+}
+function removeItem(e)
+{
+  if(e.target.classList.contains('delete'))
+  {
+    // console.log("delete called");
+    if(confirm("Are you sure you want to delete?"))
+    {
+      var li=e.target.parentElement;
+      lists.removeChild(li);
+    }
+  }
+}
+function searchItem(e)
+{
+  var text=e.target.value.toLowerCase();
+  var items=document.getElementsByTagName("li");
+  Array.from(items).forEach((item)=>{
+      itemValue=item.firstChild.textContent;
+      if(itemValue.toLowerCase().indexOf(text)!=-1)
+      {
+         item.style.display="block";
+      }
+      else
+      {
+        item.style.display="none";
+      }
+  })
+}
+
+    </script>
+</body>
+</html>
